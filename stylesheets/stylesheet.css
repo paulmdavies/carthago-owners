@@ -289,12 +289,12 @@ Full-Width Styles
 }
 
 #header_wrap {
-  background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
+  background: #8C455D;
+  background: -moz-linear-gradient(top, #373737, #8C455D);
+  background: -webkit-linear-gradient(top, #373737, #8C455D);
+  background: -ms-linear-gradient(top, #373737, #8C455D);
+  background: -o-linear-gradient(top, #373737, #8C455D);
+  background: linear-gradient(top, #373737, #8C455D);
 }
 
 #header_wrap .inner {
