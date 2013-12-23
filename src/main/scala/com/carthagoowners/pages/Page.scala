@@ -1,22 +1,21 @@
-package com.carthagoowners
+package com.carthagoowners.pages
 
 import java.io.File
 import scalatags._
+import com.carthagoowners._
+import java.io._
 
-abstract class Page( val name : String )
+abstract class Page( val name : String ) extends CustomTags
 {
-    def body() : HtmlTag
+	def customContents( ) : Seq[HtmlTag]
     
     def generate( ) : scala.xml.Node =
     {
         html(
 	        headContents,
-	    	bodyContents(
-    	        // header
+	        body(
     	        bodyHeader,
-	        	// main body
-    	        body,
-	        	// footer
+    	        bodyContents( customContents:_* ),
 	        	bodyFooter
 	    	)
 	    ).toXML
@@ -26,13 +25,17 @@ abstract class Page( val name : String )
 	{
 	    val path = parent + "/%s.html".format( name )
 	    val node = generate()
-	    scala.xml.XML.save( path, node )
+	    
+	    val formattedXML = new scala.xml.PrettyPrinter( 200, 4 ).format( node )
+	    val writer = new BufferedWriter( new FileWriter( path ) )
+	    writer.write( formattedXML )
+	    writer.close
 	}
     
     def headContents() : HtmlTag =
     {
         head(
-	        meta.name( "description" ).attr( "content" -> "Carthago Owners: The website of the UK's Carthago owners" ),
+	        meta.attr( "content" -> "Carthago Owners: The website of the UK's Carthago owners" ).name( "description" ),
 			link.attr(
 				"rel" -> "stylesheet",
 				"type" -> "text/css",
@@ -49,6 +52,10 @@ abstract class Page( val name : String )
             header.attr( "class" -> "inner" )(
             	h1.id( "project_title" )( "Carthago Owners" ),
             	h2.id( "project_tagline" )( "The website of the UK's Carthago owners" )
+    		),
+    		div.id( "header_links" ).attr( "class" -> "inner" )(
+    		    a.href( "index.html" ).name( "Homepage" )( "Home" ),
+    		    a.href( "contact.html" ).name( "Contact" )( "Contact Us" )
     		)
     	)
     }
