@@ -40,7 +40,7 @@ abstract class Page( val name : String ) extends CustomTags
 				"rel" -> "stylesheet",
 				"type" -> "text/css",
 				"media" -> "screen",
-				"href" -> "stylesheets.css"
+				"href" -> "stylesheets/stylesheet.css"
 			),
 			title( "Carthago Owners" )
 		)
@@ -55,6 +55,7 @@ abstract class Page( val name : String ) extends CustomTags
     		),
     		div.id( "header_links" ).attr( "class" -> "inner" )(
     		    a.href( "index.html" ).name( "Homepage" )( "Home" ),
+    		    a.href( "gatherings.html" ).name( "Gatherings" )( "Gatherings" ),
     		    a.href( "contact.html" ).name( "Contact" )( "Contact Us" )
     		)
     	)

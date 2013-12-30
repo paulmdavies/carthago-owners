@@ -8,5 +8,9 @@ object Main extends App
 	    new IndexPage().toFile()
 	    println( "Generating contact us page" )
 	    new ContactPage().toFile()
+	    println( "Generating gatherings page" )
+	    new GatheringsPage().toFile()	    
+	    println( "Generating May 2013 page" )
+	    new May2013GatheringPage().toFile()
 	}
 }
