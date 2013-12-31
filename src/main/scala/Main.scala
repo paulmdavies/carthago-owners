@@ -14,5 +14,7 @@ object Main extends App
 	    new May2013GatheringPage().toFile()
 	    println( "Generating September 2013 page" )
 	    new September2013GatheringPage().toFile()
+	    println( "Generating October 2013 page" )
+	    new October2013GatheringPage().toFile()
 	}
 }
