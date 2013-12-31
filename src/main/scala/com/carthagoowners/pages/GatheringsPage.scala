@@ -10,7 +10,7 @@ class GatheringsPage extends Page( "gatherings" )
 	    Seq( 
 	        h1( "Gatherings" ),
 	        table(
-	        	tr( 
+	            tr( 
 	        		td( "2014" ),
 	        		td( "May" ),
 	        		td( "September" ),
@@ -18,10 +18,9 @@ class GatheringsPage extends Page( "gatherings" )
 	        	),
 	        	tr(
 	        		td( "2013" ),
-	        		td( "May" ),
-	        		td( "September" ),
-	        		td( "October" ),
-	        		td( "Hypothetical December" )
+	        		td( a.href( "gatheringMay2013.html" ).name( "May2013" )( "May" ) ),
+	        		td( a.href( "gatheringSeptember2013.html" ).name( "September2013" )( "September" ) ),
+	        		td( a.href( "gatheringOctober2013.html" ).name( "October2013" )( "October" ) )
 	        	)
 	        )
 	    )
