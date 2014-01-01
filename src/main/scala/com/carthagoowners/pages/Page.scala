@@ -36,6 +36,7 @@ abstract class Page( val name : String ) extends CustomTags
     {
         head(
 	        meta.attr( "content" -> "Carthago Owners: The website of the UK's Carthago owners" ).name( "description" ),
+	        meta.attr( "http-equiv" -> "content-type", "content" -> "text/html;charset=utf-8" ),
 			link.attr(
 				"rel" -> "stylesheet",
 				"type" -> "text/css",
@@ -54,9 +55,9 @@ abstract class Page( val name : String ) extends CustomTags
             	h2.id( "project_tagline" )( "The website of the UK's Carthago owners" )
     		),
     		div.id( "header_links" ).attr( "class" -> "inner" )(
-    		    a.href( "index.html" ).name( "Homepage" )( "Home" ),
-    		    a.href( "gatherings.html" ).name( "Gatherings" )( "Gatherings" ),
-    		    a.href( "contact.html" ).name( "Contact" )( "Contact Us" )
+    		    a.href( "index.html" ).attr( "class" -> "header_link" ).name( "Homepage" )( "Home " ),
+    		    a.href( "gatherings.html" ).attr( "class" -> "header_link" ).name( "Gatherings" )( " Gatherings " ),
+    		    a.href( "contact.html" ).attr( "class" -> "header_link" ).name( "Contact" )( " Contact Us " )
     		)
     	)
     }

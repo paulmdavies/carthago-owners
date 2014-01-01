@@ -375,7 +375,10 @@ Full-Width Styles
   background: linear-gradient(top, #8C455D, #373737);
 }
 
-
+.header_link {
+	font-size: 20px;
+	color: #ffffff;
+}
 
 /*******************************************************************************
 Small Device Styles
